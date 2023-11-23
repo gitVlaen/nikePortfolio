@@ -17,6 +17,10 @@
     --weight-medium: 500;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 h2 {
     font-size: 24px;
     font-weight: var(--weight-medium);
@@ -48,7 +52,6 @@ button {
 button:hover {
     opacity: 0.5;
 }
-
 
 /* 컨텐츠 사이즈는 width: 1440px 상황에서 margin:0 auto를 적용하고 난 후에 작성됨 */
 
@@ -295,6 +298,7 @@ main {
 }
 .main-slide .swiper-container{
     position: relative;
+    overflow: hidden;
 }
 .main-slide ul {
     display: flex;
@@ -323,6 +327,7 @@ main {
 /* main-slide 2번째 */
 .swiper-container2 {
     position: relative;
+    overflow: hidden;
 }
 .swiper-container2 h4{
     display:flex;
@@ -341,6 +346,31 @@ main {
 .main-slide .swiper-container2 .swiper-scrollbar {
     height: 8px;
 }
+.main-slide h2 .slide-btn > .custom-btn2 {
+    margin-top: 0;
+    padding: 0;
+    background-color: var(--lightgray-color);
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-slide h2 .slide-btn > .custom-btn2:first-of-type {
+    margin-right: 10px;
+}
+.main-slide h2 .slide-btn .custom-btn2:hover {
+    opacity: 1;
+    background-color: var(--darkgray-color);
+}
+.main-slide h2 .slide-btn .custom-btn2 svg {
+    width: 20px;
+    height: 20px;
+}
+
 /* main2 */
 .main2 {
     width: 100%;
@@ -454,7 +484,7 @@ aside {
 
 /* footer */
 footer{
-    padding: 40px 60px 0 60px;
+    padding: 40px 80px 0px 80px;
     background-color: black;
 }
 #footer-wrap1 {
@@ -473,7 +503,7 @@ footer{
     color: var(--darkgray-color2);
     font-size: 12px;
     line-height: 1.75;
-    margin-right: 150px;
+    width: 100%;
 }
 #footer-lists ul:first-of-type a {
     color: var(--white);
@@ -518,9 +548,7 @@ footer{
     opacity: 1;
 }
 
-#footer-wrap2 {
-    border-bottom: 1px solid var(--darkgray-color2);
-}
+/* 저작권 & 이용약관 */
 #footer-info1 {
     display: flex;
     justify-content: space-between;
@@ -544,6 +572,20 @@ footer{
     margin-right: 5px;
 }
 #footer-info1 ul .hov:hover {
+    color: var(--white);
+}
+#footer-info2 {
+    display: flex;
+    border-top: 1px solid var(--darkgray-color2);
+    padding: 20px 0;
+}
+#footer-info2 ul li {
+    font-size: 12px;
+    color: var(--darkgray-color2);
+    padding: 0px 8px;
+}
+#footer-info2 ul li a {
+    text-decoration: underline;
     color: var(--white);
 }
 
