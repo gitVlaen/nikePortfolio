@@ -61,18 +61,20 @@ button:hover {
 
 /* 헤더 */
 header {
-    width: 100%;
-    height: auto;
     background-color: var(--lightgray-color);
     font-size: var(--font-medium);
     font-weight: var(--weight-medium);
+    position: relative;
+    height: 180px;
 }
 #header-side {
     width: 100%;
     margin:0 auto;
     font-size: var(--font-small);
-    display:flex;
+    display: flex;
     justify-content: space-between;
+    position: absolute;
+    top: 0;
 }
 #header-side .icon1 {
     margin-left: 36px;
@@ -114,31 +116,29 @@ header {
 }
 
 /* 네비게이션 바(로고, 네비게이션, 검색창)*/
-#primary-wrap {
-    background-color: red;
-    height: 58px;
-    /*  */
-}
 #primary {
     background-color: #ffffff;
     width: 100%;
+    height: 60px;
     margin:0 auto;
     font-size: var(--font-medium);
     display: flex;
     justify-content: space-between;
-    /* position: fixed; */
+    transition: 0.5s;
+    position: fixed;
+    top: 40px;
+    z-index: 1000;
 }
 /* 로고 */
+#primary .logo {
+    margin-left: 36px;
+}
 #primary .logo a strong{
     font-size: 0;
     display:block;
     background-image: url("../images/header/logo.png");
     background-position: 0 -10px;
-    margin-left: 36px;
-    margin-right: 180px;
-
-    /* nav바를 중앙에 정렬하려고 했는데 logo에 margin을 주어서 해결함 다른 방식이 있는지 찾아보기*/
-   
+    /* nav바를 중앙에 정렬하려고 했는데 logo에 margin을 주어서 해결함 다른 방식이 있는지 찾아보기*/   
     width: 78px;
     height: 58px;
 }
@@ -150,20 +150,64 @@ header {
 nav {
     display: flex;
     align-items: center;
+    margin-left: 10%;
 }
-nav a {
+nav ul {
+    display: flex;
+}
+
+nav li .title {
     padding: 12px;
 }
-nav a:hover {
+
+.dropdown-content {
+    display: none;
+    left: 0;
+    right: 0;
+    top: 60px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    position: absolute;
+    z-index: 1000;
+    background-color: #ffffff;
+  }
+.dropdown-content li {
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+}
+.dropdown-content li .subtitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dropdown-content li .subtitle a li {
+    margin: 10px 0;
+    color: var(--darkgray-color2)
+}
+
+/* hover 효과 */
+nav li:hover .dropdown-content {
+    display: block;
+  }
+
+nav ul li a:hover {
     box-sizing: border-box;
     border-bottom: 2px solid black;
 }
+
+.dropdown-content li a:hover {
+    border-bottom: none;
+}
+
 /* 검색 버튼 */
 #primary form {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 300px;
+
 }
 #primary form button {
     margin:0;
@@ -219,8 +263,12 @@ nav a:hover {
 
 /* 공지 블럭*/
 .info {
+    display: block;
+    width: 100%;
     font-size: var(--font-medium);
     text-align: center;
+    position: absolute;
+    top: 100px;
 }
 .info p:first-child {
     padding-top: 10px;
@@ -466,9 +514,12 @@ aside {
     width: 880px;
     margin: 0 auto;
     padding: 0 20px;
+    overflow: hidden;
+    transition : 0.5s ease-in-out;
 }
 .item-box {
     width: 100%;
+    height: 250px;
     margin-right: 20px;
 }
 .item-box:nth-of-type(4) {
