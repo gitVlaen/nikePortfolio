@@ -19,12 +19,6 @@
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
 
-    <style>
-
-
-
-    </style>
-
 </head>
 
 <body>
@@ -850,6 +844,27 @@
 
                     <a href="#">SNKRS</a>
                 </div>
+                <script>
+                    document.getElementById('menuButton').addEventListener('click', function () {
+                        toggleNav();
+                    });
+                    function toggleNav() {
+                        var navbar = document.getElementById('sidenavbar');
+                        if (navbar.style.width === '250px') {
+                            navbar.style.width = '0';
+                        } else {
+                            navbar.style.width = '250px';
+                        }
+                    }
+                    function toggleSubMenu(subMenuId) {
+                        var subMenu = document.getElementById(subMenuId);
+                        if (subMenu.style.display === 'block') {
+                            subMenu.style.display = 'none';
+                        } else {
+                            subMenu.style.display = 'block';
+                        }
+                    }
+                </script>
             </div>
             <div class="info">
                 <p>반품 지연 회수 안내</p>

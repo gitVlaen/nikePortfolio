@@ -20,29 +20,7 @@ window.onscroll = function () {
 };
 
 // 1024px 이하의 크기에서 햄버거 메뉴 클릭시 sidenavbar가 생성
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('menuButton').addEventListener('click', function () {
-        toggleNav();
-    });
 
-    function toggleNav() {
-        var navbar = document.getElementById('sidenavbar');
-        if (navbar.style.width === '250px') {
-            navbar.style.width = '0';
-        } else {
-            navbar.style.width = '250px';
-        }
-    }
-
-    function toggleSubMenu(subMenuId) {
-        var subMenu = document.getElementById(subMenuId);
-        if (subMenu.style.display === 'block') {
-            subMenu.style.display = 'none';
-        } else {
-            subMenu.style.display = 'block';
-        }
-    }
-});
 
 // Swiper를 이용한 슬라이드 이벤트1
 document.addEventListener('DOMContentLoaded', function () {
