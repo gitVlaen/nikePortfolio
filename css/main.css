@@ -18,7 +18,7 @@
 }
 
 body {
-    overflow-x: hidden;
+
 }
 
 h2 {
@@ -260,6 +260,90 @@ nav ul li a:hover {
 #primary form .container input:focus {
     outline: none;
 }
+
+/* 모바일 navi */
+#primary #navi2 {
+    display: none;
+    margin: 0;
+    width: 180px;
+    padding: 0 5px;
+}
+#primary #navi2 button {
+    margin:0;
+    padding:0;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color:black;
+    background-color: transparent;
+    cursor: pointer;
+}
+#primary #navi2 button img{
+    transform: trnaslate(-2%, 5%);
+}
+#primary #navi2 button:hover {
+    opacity: 1;
+    background-color: var(--gray-color);
+}
+
+/* mobile, tablet navi */
+#sidenavbar {
+    display: none;
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 100px;
+    z-index: 1;
+  }
+
+  #sidenavbar > a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    transition: 1s;
+    z-index: 2;
+    white-space: nowrap; /* 텍스트를 한 줄로 고정 */
+    overflow: hidden; /* 텍스트가 넘칠 경우 숨김 처리 */
+    /* text-overflow: ellipsis; 텍스트가 넘칠 경우 마침표로 대체 */
+  }
+
+  .sub-menu li > a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    color: grey;
+    display: block;
+    transition: 1s;
+    z-index: 2;
+    white-space: nowrap;
+    overflow: hidden;
+
+  }
+
+  .sub-manu .last {
+      font-size: 16px;
+      color: grey;
+  }
+
+  .sub-menu {
+    padding-left: 20px;
+    display: none;
+    transition: 0.5s;
+    z-index: 3;
+  }
+
+  #menuButton {
+    z-index: 4;
+  }
+
 
 /* 공지 블럭*/
 .info {
@@ -510,11 +594,11 @@ aside {
 }
 /* aside menu */
 #item-lists {
-    display:flex;
+    display: flex;
     width: 880px;
     margin: 0 auto;
     padding: 0 20px;
-    overflow: hidden;
+    overflow-y: hidden;
     transition : 0.5s ease-in-out;
 }
 .item-box {
@@ -531,6 +615,10 @@ aside {
 .item-box ul a > li {
     color: var(--darkgray-color2);
     margin: 20px 0;
+}
+
+#item-lists2 {
+    display: none;
 }
 
 /* footer */
@@ -581,7 +669,6 @@ footer{
 }
 #footer-wrap1 #sns ul{
     display: flex;
-
 }
 #footer-wrap1 #sns ul li {
     display: block;
@@ -642,14 +729,125 @@ footer{
 
 /* copyright */
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 480px) {
     /* mobile */
+
+    #com-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #com-wrap .community{
+        width: 100%;
+        margin-right: 12px;
+        margin-bottom: 30px;
+    }
+    
+    #footer-wrap1 {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    #footer-lists{
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    #footer-info1 {
+        flex-direction: column;
+    }
+    #footer-info1 ul{
+        flex-direction: column;
+    }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
     /* tablet */
+    .main-slide ul li {
+        flex: 0 0 50%;
+        margin-right: 10px;
+    }
+    .main-slide2 ul li {
+        flex: 0 0 50%;
+        margin-right: 10px;
+    }
+    .main2 ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .main2 ul li:first-of-type {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    #item-lists {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-y: hidden;
+        transition : 0.5s ease-in-out;
+    }
+
+    #com-wrap {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    #com-wrap .community{
+        flex: 1;
+        flex-basis: calc(50% - 12px);
+        margin-right: 12px;
+        margin-bottom: 30px;
+    }
+    #footer-info2 {
+        flex-direction: column;
+    }
+    #footer-info2 ul:first-of-type {
+        margin-bottom: 20px;
+    }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
     /* desktop */
+    #header-side{
+        display: none;
+    }
+    #primary nav {
+        display: none;
+    }
+    #primary form{
+        display: none;
+    }
+    #primary #navi2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* 1024이하 화면에서는 햄버거 메뉴를 통한 사이드 네비게이션을 생성*/
+
+    #sidenavbar {
+        display: block;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
